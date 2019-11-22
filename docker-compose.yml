@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+    web:
+        image: silesiacoin/nodejs:latest
+        volumes:
+            - ./:/var/www/app
+        networks:
+            silesiacoin:
+                aliases:
+                  - authenticator.localhost
+
+networks:
+    silesiacoin:
+        driver: bridge
