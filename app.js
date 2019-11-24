@@ -26,8 +26,6 @@ const indexResponse = () => {
 const createAccount = async() => {
     const accounts = new Accounts();
     const { address, privateKey } = accounts.create();
-    // This function if node is connected will return whole account. Private Key is enough for further dev
-    // const account = await web3.eth.accounts.privateKeyToAccount(privateKey);
 
     return {
         address,
