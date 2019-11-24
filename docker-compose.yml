@@ -9,7 +9,7 @@ services:
         networks:
             silesiacoin:
                 aliases:
-                  - authenticator.localhost
+                  - authenticator.local
 
 networks:
     silesiacoin:
