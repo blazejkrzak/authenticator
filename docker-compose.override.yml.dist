@@ -2,5 +2,13 @@ version: "3"
 
 services:
     web:
+        command: ['yarn', 'first-start']
+        volumes:
+            - .silesiacoin:/root/.silesiacoin
         ports:
             - 127.0.66.2:8081:8081
+
+        ssc-node:
+            image: silesiacoin/nodejs:latest
+            volumes:
+                - .silesiacoin:/root/.silesiacoin
