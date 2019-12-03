@@ -5,3 +5,10 @@ services:
         command: ['yarn', 'first-start']
         ports:
             - 8081:8081
+        volumes:
+          - .silesiacoin:/root/.silesiacoin
+
+    ssc-node:
+        image: silesiacoin/nodejs:latest
+        volumes:
+            - .silesiacoin:/root/.silesiacoin
