@@ -2,13 +2,16 @@ const express = require('express');
 const Web3 = require('web3');
 const net = require('net');
 const Accounts = require('web3-eth-accounts');
+const cors = require('cors');
 const app = express();
 const port = (process.env.port || 8081);
 const ipcLocator = (process.env.nodeAddr || '/root/.silesiacoin/ssc.ipc');
 
 app.get('/', (req, res) => res.json(res.json(indexResponse())));
 app.get('/accounts/:address', async(req, res) => res.json(await checkBalance(req)));
+app.options('/accounts', cors());
 app.put('/accounts', async(req, res) => res.json(await createAccount()));
+app.use(cors());
 
 app.listen(port, () => console.log(`Authenticator listening on port ${port}!`));
 
